@@ -8,6 +8,8 @@
 </head>
 <body>
     <?php 
+    $ano = date("D/ M/ Y");
+    echo "Olá mundo em $ano!"
     ?>
 </body>
 </html>
