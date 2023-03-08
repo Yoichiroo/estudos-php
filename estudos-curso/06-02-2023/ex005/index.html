@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Média anual</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <main>
+          <h1>Sua média anual</h1>
+          <form action="number.php">
+               <label for="disc">Disciplina</label>
+               <select name="disc" id="disc">
+                    <option value="Linguagem Técnica de Programação Web II">LTPW</option>
+                    <option value="Redes de Comunicação">REDES</option>
+                    <option value="Análise e Desenvolvimento de Sistemas">ADS</option>
+                    <option value="Banco de Dados">BD</option>
+                    <option value="Design II">DS</option>
+                    <option value="Aplicações Web II">APL WEB</option>
+               </select>
+               <label for="nota1">Digite a nota da 1° etapa: </label>
+               <input type="number" name="nota1" id="nota1" step="0.01" max="10">
+               <label for="nota2">Digite a nota da 2° etapa: </label>
+               <input type="number" name="nota2" id="nota2" step="0.01" max="10">
+               <label for="nota3">Digite a nota da 3° etapa: </label>
+               <input type="number" name="nota3" id="nota3" step="0.01"  max="10">
+               <input type="submit" value="Calcular">
+          </form>
+     </main>
+</body>
+</html>
