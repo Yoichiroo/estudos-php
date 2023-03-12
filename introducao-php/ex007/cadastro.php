@@ -18,10 +18,11 @@
                 var_dump($_POST);
                 var_dump($_REQUEST); // Junção de $_GET, $_POST, $_COOKIES
             */
-            $nome = $_REQUEST["nome"];
-            $sobrenome = $_REQUEST["sobrenome"];
+            $nome = $_REQUEST["nome"] ?? "Desconhecido";
+            $sobrenome = $_REQUEST["sobrenome"] ?? "Indigente";
             echo "<p> É um prazer te conhecer, <strong>$nome $sobrenome!</strong> Este é o meu site."
         ?>
+        <p><button onclick="javascript:history.go(-1)">Voltar para a página anterior</button></p>
     </main>
 </body>
 </html>
