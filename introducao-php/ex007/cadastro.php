@@ -20,6 +20,7 @@
             */
             $nome = $_REQUEST["nome"];
             $sobrenome = $_REQUEST["sobrenome"];
+            echo "<p> É um prazer te conhecer, <strong>$nome $sobrenome!</strong> Este é o meu site."
         ?>
     </main>
 </body>
