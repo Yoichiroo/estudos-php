@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php 
+        $real = $_REQUEST["moeda"] ?? 00.00;
+        $cotacao = 4.91;
+        $realEmDolar =  $real / $cotacao;
+    ?>
     <main>
-        
+        <h1>Conversor de Moedas 1.0</h1>
+        <form action="<?=$_SERVER["PHP_SELF"]?>" method="post">
+            <label for="moeda">Quantos R$ você tem na carteira?</label>
+            <input type="number" name="moeda" id="moeda" value="<?=$real?>" step="0.01">
+            <input type="submit" value="Converter">
+        </form>
     </main>
+    <section>
+        <h2>Resultado</h2>
+        <?php 
+            echo "<p>Seus R$$real equivalem a <strong>US$". number_format($realEmDolar, 2, ",", ".") ."</strong></p>";
+            echo "<p><strong>Cotação fixa de R$$cotacao diretamente informada no código.</strong></p>";
+        ?>
+    </section>
 </body>
 </html>
