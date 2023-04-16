@@ -12,6 +12,7 @@
         $real = $_REQUEST["moeda"] ?? 00.00;
         $cotacao = 4.91;
         $realEmDolar =  $real / $cotacao;
+        $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
     ?>
     <main>
         <h1>Conversor de Moedas 1.0</h1>
@@ -24,7 +25,7 @@
     <section>
         <h2>Resultado</h2>
         <?php 
-            echo "<p>Seus R$$real equivalem a <strong>US$". number_format($realEmDolar, 2, ",", ".") ."</strong></p>";
+            echo "<p>Seus " . numfmt_format_currency($padrao, $real, "BRL") . " equivalem a <strong>". numfmt_format_currency($padrao, $realEmDolar, "USD") ."</strong></p>";
             echo "<p><strong>Cotação fixa de R$$cotacao diretamente informada no código.</strong></p>";
         ?>
     </section>
