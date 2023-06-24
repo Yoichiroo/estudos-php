@@ -23,7 +23,7 @@
             <?php
                 $busca = $conexao -> prepare("SELECT * FROM pessoas");
                 $busca -> setFetchMode(PDO::FETCH_ASSOC);
-                $busca -> execute();
+                $busca->execute();
                 $dados = $busca->fetchAll();
                 
                 foreach($dados as $indice => $info) {
