@@ -1,0 +1,43 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section#busca {
+    padding: 20px 0px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 20px;
+}
+
+th {
+    background-color: rgb(99, 99, 99);
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(232, 232, 232);
+}
+
+a {
+    text-decoration: none;
+}
+
+a.btn, input[type=submit] {
+    background-color: lightgray;
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    font-size: 1em;
+}
+
+a.btn:hover, input[type=submit]:hover {
+    background-color: gray;
+    color: white;
+}
