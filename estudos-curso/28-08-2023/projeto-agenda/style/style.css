@@ -1,0 +1,44 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: cadetblue;
+}
+
+main {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.286);
+}
+
+img.miniatura {
+    width: 50px;
+}
+
+img.normal {
+    width: 200px;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.486);
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    background-color: lightgrey;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: gray;
+    color: white;
+}
