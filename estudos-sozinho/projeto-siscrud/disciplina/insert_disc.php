@@ -10,7 +10,7 @@
     $exec = mysqli_query($conexao, $query);
 
     if($exec) {
-        echo "<p>Disciplina <strong>$nome_disc</strong> adicionado com sucesso!</p>";
+        echo "<p>Disciplina <strong>$nome_disc</strong> adicionada com sucesso!</p>";
         echo "<a href='index.php'>Voltar para home</a>";
     } else {
         echo "deu ruim paizao";

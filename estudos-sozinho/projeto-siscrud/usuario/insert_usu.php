@@ -6,7 +6,6 @@
     $ativo = $_GET['ativo'] ?? '';
     $nivel = $_GET['nivel'] ?? '';
     $dt_cadastro = $_GET['dt_cad'] ?? '';
-
     $senha_decodificada = password_hash($senha, PASSWORD_DEFAULT);
 
     $query = "INSERT INTO usuario VALUES (0,'$nome_usu','$senha_decodificada','$ativo','$nivel','$dt_cadastro') LIMIT 1";
