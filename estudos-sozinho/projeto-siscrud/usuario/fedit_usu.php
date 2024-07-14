@@ -31,6 +31,6 @@
         <label for="dt_cad">Data Cadastro:</label>
         <input type="date" name="dt_cad" id="dt_cad" value="<?=$dados['dt_cadastro']?>"><br><br>
 
-        <input type="submit" value="Atualizar">
+        <input type="submit" value="Atualizar" class="btn btn-primary">
     </form>
 </main>

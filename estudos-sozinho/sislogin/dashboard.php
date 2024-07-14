@@ -9,6 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+            .col,
+            .col-md-2,
+            .col-md-4,
+            .col-md-5,
+            .col-md-6 {
+                margin: 0.5rem 0;
+            }
+
         .logout {
             width: 100px;
             color: white;
@@ -18,7 +26,9 @@
 </head>
 <body>
     <?php
-            session_start();
+            if(!isset($_SESSION)) {
+                session_start();
+            }
 
             if(!isset($_SESSION['UsuarioID'])) {
                 header("Location: index.php");
@@ -33,11 +43,11 @@
                         break;
 
                     case 2:
-                        $qtd_itens = 5;
+                        $qtd_itens = 4;
                         break;
                         
                     case 3:
-                        $qtd_itens = 10;
+                        $qtd_itens = 5;
                         break;
 
                     default:
@@ -50,188 +60,160 @@
         <div class="sidebar close">
             <div class="logo-details">
                 <i class="bx bxl-c-plus-plus"></i>
-                <span class="logo_name">Siscrud</span>
+                <span class="logo_name">SisLogin</span>
             </div>
             <ul class="nav-links">
                 <li>
-                <a href="#">
+                <a href="dashboard.php">
                     <i class="bx bx-compass"></i>
                     <span class="link_name">Explorar</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Explorar</a></li>
+                    <li><a class="link_name" href="dashboard.php">Explorar</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class="bx bx-history"></i>
-                    <span class="link_name">Histórico</span>
+                <a href="dashboard.php?page=lista_usu.php">
+                    <i class="bx bx-user"></i>
+                    <span class="link_name">Usuários</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Histórico</a></li>
+                    <li><a class="link_name" href="#">Usuário</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class="bx bx-cog"></i>
-                    <span class="link_name">Configurações</span>
+                <a href="dashboard.php?page=lista_prod.php">
+                    <i class="bx bx-cart"></i>
+                    <span class="link_name">Produtos</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Configurações</a></li>
+                    <li><a class="link_name" href="dashboard.php?page=lista_prod.php">Produtos</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="dashboard.php?page=lista_disc.php">
+                    <i class="bx bx-list-check"></i>
+                    <span class="link_name">Disciplinas</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="dashboard.php?page=lista_disc.php">Disciplinas</a></li>
                 </ul>
                 </li>
 
-    <?php   } elseif($qtd_itens == 5) { ?>
+    <?php   } elseif($qtd_itens == 4) { ?>
         <div class="sidebar close">
             <div class="logo-details">
                 <i class="bx bxl-c-plus-plus"></i>
-                <span class="logo_name">Siscrud</span>
+                <span class="logo_name">SisLogin</span>
             </div>
             <ul class="nav-links">
                 <li>
-                <a href="#">
+                <a href="dashboard.php">
                     <i class="bx bx-compass"></i>
-                    <span class="link_name">Home</span>
+                    <span class="link_name">Explorar</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Explorar</a></li>
+                    <li><a class="link_name" href="dashboard.php">Explorar</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class="bx bx-history"></i>
-                    <span class="link_name">Histórico</span>
+                <a href="dashboard.php?page=lista_usu.php">
+                    <i class="bx bx-user"></i>
+                    <span class="link_name">Usuários</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Histórico</a></li>
+                    <li><a class="link_name" href="#">Usuário</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class="bx bx-cog"></i>
-                    <span class="link_name">Configurações</span>
+                <a href="dashboard.php?page=lista_prod.php">
+                    <i class="bx bx-cart"></i>
+                    <span class="link_name">Produtos</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Configurações</a></li>
+                    <li><a class="link_name" href="dashboard.php?page=lista_prod.php">Produtos</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class='bx bx-list-check'></i>
-                    <span class="link_name">Pagamentos</span>
+                <a href="dashboard.php?page=lista_disc.php">
+                    <i class="bx bx-list-check"></i>
+                    <span class="link_name">Disciplinas</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Pagamentos</a></li>
+                    <li><a class="link_name" href="dashboard.php?page=lista_disc.php">Disciplinas</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class='bx bxs-spreadsheet'></i>
-                    <span class="link_name">Tarefas</span>
+                <a href="dashboard.php?page=lista_func.php">
+                    <i class="bx bx-briefcase"></i>
+                    <span class="link_name">Funcionários</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Tarefas</a></li>
+                    <li><a class="link_name" href="dashboard.php?page=lista_func.php">Funcionários</a></li>
                 </ul>
                 </li>
-            </ul>
+                
     <?php   } else { ?>
         <div class="sidebar close">
             <div class="logo-details">
                 <i class="bx bxl-c-plus-plus"></i>
-                <span class="logo_name">Siscrud</span>
+                <span class="logo_name">SisLogin</span>
             </div>
             <ul class="nav-links">
                 <li>
-                <a href="#">
+                <a href="dashboard.php">
                     <i class="bx bx-compass"></i>
-                    <span class="link_name">Home</span>
+                    <span class="link_name">Explorar</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Explorar</a></li>
+                    <li><a class="link_name" href="dashboard.php">Explorar</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class="bx bx-history"></i>
-                    <span class="link_name">Histórico</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Histórico</a></li>
-                </ul>
-                </li>
-                <li>
-                <a href="#">
-                    <i class="bx bx-cog"></i>
-                    <span class="link_name">Configurações</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Configurações</a></li>
-                </ul>
-                </li>
-                <li>
-                <a href="#">
-                    <i class='bx bx-list-check'></i>
-                    <span class="link_name">Pagamentos</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Pagamentos</a></li>
-                </ul>
-                </li>
-                <li>
-                <a href="#">
-                    <i class='bx bxs-spreadsheet'></i>
-                    <span class="link_name">Tarefas</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Tarefas</a></li>
-                </ul>
-                </li>
-                <li>
-                <a href="#">
-                    <i class='bx bxs-shopping-bag'></i>
-                    <span class="link_name">Produtos</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Produtos</a></li>
-                </ul>
-                </li>
-                <li>
-                <a href="#">
-                    <i class='bx bxs-capsule'></i>
-                    <span class="link_name">Medicamentos</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Medicamentos</a></li>
-                </ul>
-                </li>
-                <li>
-                <a href="#">
-                <i class='bx bx-user'></i>
+                <a href="dashboard.php?page=lista_usu.php">
+                    <i class="bx bx-user"></i>
                     <span class="link_name">Usuários</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Usuários</a></li>
+                    <li><a class="link_name" href="#">Usuário</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                    <i class='bx bx-dots-vertical-rounded'></i>
-                    <span class="link_name">Ferramentas</span>
+                <a href="dashboard.php?page=lista_prod.php">
+                    <i class="bx bx-cart"></i>
+                    <span class="link_name">Produtos</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Ferramentas</a></li>
+                    <li><a class="link_name" href="dashboard.php?page=lista_prod.php">Produtos</a></li>
                 </ul>
                 </li>
                 <li>
-                <a href="#">
-                <i class='bx bxs-music' ></i>
-                    <span class="link_name">Músicas</span>
+                <a href="dashboard.php?page=lista_disc.php">
+                    <i class="bx bx-list-check"></i>
+                    <span class="link_name">Disciplinas</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Músicas</a></li>
+                    <li><a class="link_name" href="dashboard.php?page=lista_disc.php">Disciplinas</a></li>
                 </ul>
                 </li>
-            </ul>
+                <li>
+                <a href="dashboard.php?page=lista_func.php">
+                    <i class="bx bx-briefcase"></i>
+                    <span class="link_name">Funcionários</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="dashboard.php?page=lista_func.php">Funcionários</a></li>
+                </ul>
+                </li>
+                <li>
+                <a href="dashboard.php?page=lista_alu.php">
+                    <i class="bx bxs-graduation"></i>
+                    <span class="link_name">Alunos</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="dashboard.php?page=lista_alu.php">Alunos</a></li>
+                </ul>
+                </li>
     <?php } ?>
     <li>
         <div class="profile-details">
@@ -240,7 +222,7 @@
             </div>
             <div class="name-job">
             <div class="profile_name"><?=$_SESSION['UsuarioNome']?></div>
-            <div class="job">Itens: <?=$qtd_itens?></div>
+            <div class="job">Tabelas: <?=$qtd_itens?></div>
         </div>
         <a href="logout.php" class="logout"><i class="bx bx-log-out"></i></a>
         </div>
@@ -251,50 +233,12 @@
     <section class="home-section">
     <div class="home-content">
         <i class='bx bx-menu' ></i>
-        <span class="text">Drop Down Sidebar</span>
+        <span class="text">Menu</span>
     </div>
     <div class="container">
+        <div class="row"><?php require_once "base/avisos.php"; ?></div>
         <div class="row">
-        <div class="col d-flex justify-content-center">
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-        </div>
-
-        <div class="col d-flex justify-content-center">
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col d-flex justify-content-center">
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-        </div>
-
-        <div class="col d-flex justify-content-center">
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            </div>
-        </div>
+            <?php require_once "base/chPages.php";?>
         </div>
     </div>
     </section>

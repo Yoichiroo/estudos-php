@@ -29,8 +29,8 @@
         echo "<td>" . $dados['id_func'] . "</td>";
         echo "<td>" . $dados['matricula_func'] . "</td>";
         echo "<td>" . $dados['nome_func'] . "</td>";
-        echo "<td>" . $dados['estado_civil'] . "</td>";
-        echo "<td>" . $dados['dt_nasc'] . "</td>";
+        echo "<td>" . $dados['estado_civil_func'] . "</td>";
+        echo "<td>" . $dados['dt_nasc_func'] . "</td>";
         echo "<td>" . $dados['sexo_func'] . "</td>";
         echo "<td>" . $dados['nac_func'] . "</td>";
         echo "<td>" . $dados['nat_func'] . "</td>";

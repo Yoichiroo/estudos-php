@@ -15,7 +15,7 @@
 
     require_once "../conexao.php";
 
-    $sql = "SELECT * FROM aluno";
+    $sql = "SELECT * FROM aluno";   
 
     $sql = mysqli_query($conexao, $sql);
 
